@@ -45,6 +45,8 @@ svg {
   overflow: hidden;
 }
 .portfolio {
+  position: relative;
+  isolation: isolate;
   max-width: 1140px;
   padding: 64px 40px 0;
   margin: 0 auto;
@@ -231,7 +233,6 @@ h3 {
 }
 .contact {
   position: relative;
-  isolation: isolate;
   padding: 88px 0 32px;
   text-align: center;
 }
@@ -239,13 +240,14 @@ h3 {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: -120px -40px 0;
+  inset: -220px -40px 0;
   pointer-events: none;
   background: radial-gradient(
-    ellipse at 50% 50%,
-    #41349570 0,
-    #25204440 30%,
-    transparent 85%
+    ellipse 65% 60% at 50% 60%,
+    #49418c99 0%,
+    #49418c80 35%,
+    #37315e55 65%,
+    transparent 100%
   );
 }
 .contact h2 {
