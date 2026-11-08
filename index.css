@@ -243,11 +243,11 @@ h3 {
   inset: -220px -40px 0;
   pointer-events: none;
   background: radial-gradient(
-    ellipse 65% 60% at 50% 60%,
+    ellipse 35% 70% at 50% 70%,
     #49418c99 0%,
-    #49418c80 35%,
-    #37315e55 65%,
-    transparent 100%
+    #49418c80 20%,
+    #37315e55 60%,
+    transparent 130%
   );
 }
 .contact h2 {
