@@ -239,13 +239,13 @@ h3 {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 0 -40px;
+  inset: -120px -40px 0;
   pointer-events: none;
   background: radial-gradient(
-    ellipse at 50% 62%,
+    ellipse at 50% 50%,
     #41349570 0,
     #25204440 30%,
-    transparent 67%
+    transparent 85%
   );
 }
 .contact h2 {
