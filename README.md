@@ -9,7 +9,7 @@ Portafolio personal de una desarrolladora Full-Stack Junior, construido a partir
 - **HTML5:** estructura semántica con secciones, navegación y tarjetas de proyectos.
 - **CSS3:** maquetación con Flexbox y Grid, variables de color, degradados, transiciones y clases con nomenclatura BEM.
 - **JavaScript:** actualización automática del año del footer y prevención del salto de página en enlaces provisionales (`href="#"`).
-- **SVG:** iconos reutilizables mediante `symbol` y `use`.
+- **ICO:** iconos locales con transparencia y seis resoluciones (16 a 256 px), insertados con `img`. El archivo `favicon.ico` identifica la pestaña del navegador.
 - **Google Fonts:** tipografías Archivo Black y Open Sans.
 - **Figma, Git y GitHub Pages:** referencia visual, control de versiones y publicación del sitio.
 
@@ -25,10 +25,9 @@ El sitio utiliza HTML, CSS y JavaScript sin frameworks ni dependencias de instal
 
 ## Estructura
 
-| Archivo o carpeta | Contenido                                           |
-| ----------------- | --------------------------------------------------- |
-| `index.html`      | Perfil, habilidades, proyectos y contacto.          |
-| `index.css`       | Estilos, efectos visuales y adaptación a pantallas. |
-| `index.js`        | Interacciones y actualización del año.              |
-| `images/`         | Fotografía de perfil y recursos de los proyectos.   |
-| `Desing/`         | Archivo original de Figma y vista previa.           |
+| Archivo o carpeta   | Contenido                                                                    |
+| ------------------- | ---------------------------------------------------------------------------- |
+| `index.html`        | Perfil, habilidades, proyectos y contacto.                                   |
+| `estilos/index.css` | Estilos, efectos visuales y adaptación a pantallas.                          |
+| `index.js`          | Interacciones y actualización del año.                                       |
+| `images/`           | Fotografía de perfil, imágenes de proyectos e iconos ICO en `images/icons/`. |

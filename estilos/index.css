@@ -35,16 +35,10 @@ img {
   display: block;
   max-width: 100%;
 }
-svg {
+.icon {
   display: block;
   width: 24px;
   height: 24px;
-}
-.icon-library {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
 }
 .portfolio {
   position: relative;
@@ -122,7 +116,8 @@ h1 {
   margin-top: 24px;
 }
 
-.socials a {
+.socials a,
+.socials__bottom a {
   position: relative;
   display: inline-flex;
   padding: 3px;
@@ -132,10 +127,21 @@ h1 {
     filter 0.2s ease;
 }
 .socials a:hover,
-.socials a:focus-visible {
+.socials a:focus-visible,
+.socials__bottom a:hover,
+.socials__bottom a:focus-visible {
   color: var(--accent);
   transform: translateY(-3px) scale(1.12);
   filter: drop-shadow(0 0 6px #7770ff80);
+}
+.socials a:hover .icon,
+.socials a:focus-visible .icon,
+.socials__bottom a:hover .icon,
+.socials__bottom a:focus-visible .icon {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(77%) saturate(2000%) hue-rotate(220deg) brightness(108%) contrast(101%);
+}
+.project__link_Github .icon {
+  opacity: 0.72;
 }
 .socials a::after {
   content: attr(aria-label);
@@ -169,8 +175,8 @@ h1 {
   left: 0;
   transform: none;
 }
-.socials svg,
-.socials__bottom svg {
+.socials .icon,
+.socials__bottom .icon {
   width: 32px;
   height: 32px;
   flex-shrink: 0;
@@ -198,22 +204,14 @@ h1 {
   width: 64px;
   height: 64px;
 }
-.skill svg {
+.skill .icon {
   width: 56px;
   height: 56px;
   flex-shrink: 0;
 }
-.skill__js {
-  display: flex;
-  align-items: end;
-  justify-content: end;
+.skill .skill__js {
   width: 48px;
   height: 48px;
-  padding: 3px;
-  background: #f7df1e;
-  color: #111;
-  font-weight: 700;
-  font-size: 31px;
 }
 .projects {
   margin-top: 100px;
@@ -323,7 +321,7 @@ h1 {
 .project__link_Github {
   color: var(--muted2);
 }
-.project__link svg {
+.project__link .icon {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -398,17 +396,16 @@ h1 {
     width: 56px;
     height: 56px;
   }
-  .skill svg {
+  .skill .icon {
     width: 48px;
     height: 48px;
   }
-  .skill__js {
+  .skill .skill__js {
     width: 40px;
     height: 40px;
-    font-size: 26px;
   }
-  .socials svg,
-  .socials__bottom svg {
+  .socials .icon,
+  .socials__bottom .icon {
     width: 28px;
     height: 28px;
   }
@@ -465,21 +462,20 @@ h1 {
     width: 40px;
     height: 40px;
   }
-  .skill svg {
+  .skill .icon {
     width: 32px;
     height: 32px;
   }
-  .skill__js {
+  .skill .skill__js {
     width: 28px;
     height: 28px;
-    font-size: 18px;
   }
-  .socials svg,
-  .socials__bottom svg {
+  .socials .icon,
+  .socials__bottom .icon {
     width: 24px;
     height: 24px;
   }
-  .project__link svg {
+  .project__link .icon {
     width: 16px;
     height: 16px;
   }
