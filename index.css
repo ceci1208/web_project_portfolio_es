@@ -239,9 +239,23 @@ h1 {
   overflow: hidden;
 }
 .project__image-link {
+  position: relative;
   display: block;
   overflow: hidden;
   background: #6c63ff;
+}
+.project__image-link::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgb(0 0 0 / 12%) 65%,
+    rgb(0 0 0 / 55%) 100%
+  );
 }
 .project__image {
   width: 100%;
