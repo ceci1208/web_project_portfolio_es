@@ -50,7 +50,7 @@ svg {
   position: relative;
   isolation: isolate;
   max-width: 1140px;
-  padding: 64px 40px 0;
+  padding: 40px 40px 0;
   margin: 0 auto;
 }
 h1,
@@ -72,7 +72,7 @@ h3 {
 }
 .profile {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: minmax(0, 1fr) 387px;
   gap: 64px;
   align-items: start;
 }
@@ -93,20 +93,24 @@ h1 {
   font-family: "Open Sans", serif;
   color: var(--profile-rol);
   font-size: 18px;
-  line-height: 100%;
+  line-height: 1.5;
 }
 .profile__bio {
   margin-bottom: 16px;
   font-family: "Open Sans", serif;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.55;
 }
 .profile__photo {
-  width: 320px;
-  height: 380px;
+  width: 387px;
+  height: 500px;
+  aspect-ratio: 387 / 500;
   object-fit: cover;
-  object-position: 46% center;
+  object-position: center 20%;
+  justify-self: center;
+  transform: rotate(0deg);
+  opacity: 1;
 }
 .socials {
   display: flex;
@@ -169,14 +173,28 @@ h1 {
   left: 0;
   transform: none;
 }
+.socials svg,
+.socials__bottom svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.socials,
+.socials__bottom {
+  flex-wrap: wrap;
+}
+.profile__content {
+  min-width: 0;
+}
 .skills {
   margin-top: 100px;
 }
 .skills__list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
+  justify-items: center;
+  gap: 24px;
   padding: 0;
   margin: 50px 0 0;
   list-style: none;
@@ -185,24 +203,25 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
 }
 .skill svg {
-  width: 50px;
-  height: 57px;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
 }
 .skill__js {
   display: flex;
   align-items: end;
   justify-content: end;
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   padding: 3px;
   background: #f7df1e;
   color: #111;
   font-weight: 700;
-  font-size: 23px;
+  font-size: 31px;
 }
 .projects {
   margin-top: 100px;
@@ -303,8 +322,9 @@ h3 {
   color: var(--muted2);
 }
 .project__link svg {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 .contact {
   position: relative;
@@ -326,7 +346,7 @@ h3 {
   );
 }
 .contact h2 {
-  font-size: 36px;
+  font-size: 40px;
 }
 .contact > p:not(.contact__copyright) {
   margin-top: 16px;
@@ -352,7 +372,8 @@ h3 {
 }
 @media (min-width: 1440px) {
   .portfolio {
-    padding-top: 80px;
+    max-width: 1280px;
+    padding-top: 40px;
   }
 }
 @media (max-width: 900px) {
@@ -363,23 +384,38 @@ h3 {
     grid-template-columns: minmax(0, 1fr) 240px;
     gap: 32px;
   }
-  h1 {
-    font-size: 48px;
-  }
   .profile__photo {
-    width: 240px;
-    height: 320px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 387 / 500;
   }
-  .profile__bio {
-    font-size: 14px;
+  .profile__name {
+    font-size: 58px;
   }
   .profile__role {
-    font-size: 18px;
     margin-bottom: 20px;
   }
   .skills,
   .projects {
     margin-top: 48px;
+  }
+  .skill {
+    width: 56px;
+    height: 56px;
+  }
+  .skill svg {
+    width: 48px;
+    height: 48px;
+  }
+  .skill__js {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+  .socials svg,
+  .socials__bottom svg {
+    width: 28px;
+    height: 28px;
   }
   .project__body {
     padding: 20px;
@@ -404,44 +440,53 @@ h3 {
     gap: 28px;
   }
   .profile__photo {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1.12;
-    object-position: center 42%;
+    max-width: 387px;
+    align-self: center;
   }
-  h1 {
-    font-size: 44px;
-    line-height: 1.02;
+  .profile__content {
+    width: 100%;
+  }
+  .profile__name {
+    font-size: 36px;
+    line-height: 1.1;
     letter-spacing: -1px;
   }
-  .profile__role {
-    font-size: 18px;
+  .profile__role,
+  .profile__bio {
+    font-size: 16px;
   }
   .profile__bio {
-    font-size: 15px;
     line-height: 1.6;
   }
-  h2 {
-    font-size: 24px;
+  h2,
+  .contact h2 {
+    font-size: 28px;
   }
   .skills__list {
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    gap: 8px;
     margin-top: 24px;
   }
   .skill {
-    width: 36px;
+    width: 40px;
     height: 40px;
   }
   .skill svg {
     width: 32px;
-    height: 36px;
+    height: 32px;
   }
   .skill__js {
-    width: 30px;
-    height: 30px;
-    font-size: 19px;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+  }
+  .socials svg,
+  .socials__bottom svg {
+    width: 24px;
+    height: 24px;
+  }
+  .project__link svg {
+    width: 16px;
+    height: 16px;
   }
   .projects__grid {
     grid-template-columns: 1fr;
@@ -456,9 +501,6 @@ h3 {
   }
   .contact {
     padding-top: 64px;
-  }
-  .contact h2 {
-    font-size: 32px;
   }
   .contact::before {
     inset-inline: -20px;
